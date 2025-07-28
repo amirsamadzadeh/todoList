@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   
+    <svg style="display: none;">
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 icon"
+        id="arrowDown"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m11.99 16.5 3.75 3.75m0 0 3.75-3.75m-3.75 3.75V3.75H4.49"
+        />
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 icon"
+        id="add"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </symbol>
+
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 icon"
+        id="sort"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+        />
+      </symbol>
+    </svg>
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header__title">Today</h1>
+      <div class="theme">
+        <svg class="icon setThemeLight"><use xlink:href="#sun"></use></svg>
+        <span class="theme__divider"></span>
+        <svg class="icon setThemeDark"><use xlink:href="#moon"></use></svg>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="layout">
+      <!-- Left Section: Todo List -->
+      <section class="todos">
+        <div class="todos__header">
+          <h2 class="todos__title">Todos</h2>
+          <svg class="icon"><use xlink:href="#arrowDown"></use></svg>
+        </div>
+
+        <!-- todo options -->
+        <div class="todo__options">
+          <!-- filter todo -->
+          <div class="dropdown">
+            <button class="dropdown__toggle">
+              <svg class="dropdown__icon icon--flip">
+                <use xlink:href="#sort"></use>
+              </svg>
+              <span class="dropdown__label">Filter</span>
+            </button>
+            <ul class="dropdown__menu">
+              <li class="dropdown__item" data-value="all">All</li>
+              <li class="dropdown__item" data-value="completed">Completed</li>
+              <li class="dropdown__item" data-value="pending">Pending</li>
+            </ul>
+          </div>
+
+          <!-- Sort Todo -->
+          <div class="dropdown">
+            <button class="dropdown__toggle">
+              <svg class="dropdown__icon icon--flip">
+                <use xlink:href="#sort"></use>
+              </svg>
+              <span class="dropdown__label">SortBy</span>
+            </button>
+            <ul class="dropdown__menu">
+              <li class="dropdown__item" data-value="Completed">Completed</li>
+              <li class="dropdown__item" data-value="NotCompleted">
+                Not Completed
+              </li>
+              <li class="dropdown__item" data-value="Date">Date Modified</li>
+            </ul>
+          </div>
+
+          <!-- change color theme -->
+          <div class="color__option">
+            <span class="color__change box1"></span>
+            <span class="color__change box2"></span>
+            <span class="color__change box3"></span>
+            <span class="color__change box4"></span>
+          </div>
+        </div>
+        <ul class="todos__list">
+          <!-- Sample Todo Item -->
+          <li class="todo bordered">
+            <h3 class="todo__name">Sample Task</h3>
+            <p class="todo__description">This is a sample description.</p>
+            <div class="todo__difficulty">
+              <svg class="icon"><use xlink:href="#star"></use></svg>
+              <svg class="icon"><use xlink:href="#star"></use></svg>
+            </div>
+          </li>
+        </ul>
+
+        <!-- backup and export  -->
+        <div>
+          <button class="button button__export button__size" >
+            Export
+          </button>
+          <button class="button button__export button__size" >
+            Backup
+          </button>
+        </div>
+      </section>
+
+      <!-- Right Section: Add Todo -->
+      <section class="add">
+        <h2 class="add__title">Add New Task</h2>
+        <div class="add__field bordered">
+          <svg class="icon"><use xlink:href="#add"></use></svg>
+          <input type="text" placeholder="Task name" class="add__input" />
+        </div>
+        <textarea
+          class="add__textarea bordered"
+          placeholder="Description..."
+        ></textarea>
+        <div class="add__difficulty">
+          <span class="difficulty__title">Difficulty</span>
+          <div class="stars">
+            <svg class="icon"><use xlink:href="#star"></use></svg>
+            <svg class="icon"><use xlink:href="#star"></use></svg>
+            <svg class="icon"><use xlink:href="#star"></use></svg>
+            <svg class="icon"><use xlink:href="#star"></use></svg>
+            <svg class="icon"><use xlink:href="#star"></use></svg>
+          </div>
+        </div>
+        <div class="add__buttons">
+          <span class="button bordered">Add</span>
+          <span class="button bordered">Cancel</spa>
+        </div>
+      </section>
+    </main>
+
+    <!-- SVG Icons -->
+
+    <script src="./js/app.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/sort.js"></script>
+    <script src="./js/color.js"></script>
+  </body>
+</html> 

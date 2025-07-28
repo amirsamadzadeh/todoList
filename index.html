@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- svg icons -->
+    <svg style="display: none">
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+        id="sun"
+      >
+        <path
+          d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"
+        />
+      </symbol>
+
+      <symbol
+        id="moon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+        />
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 icon"
+        id="add"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6" id='star'>
+        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+      </symbol>
+
+
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 icon"
+        id="arrowDown"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m11.99 16.5 3.75 3.75m0 0 3.75-3.75m-3.75 3.75V3.75H4.49"
+        />
+      </symbol>
+      <symbol
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+        id="trash"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+        />
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="smile">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+      </symbol>
+
+        <symbol xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="done">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+        </symbol>
+
+
+    </svg>
+    <div class="container">
+      <header >
+        <h1 class="header__title">Today</h1>
+        <div class="theme">
+          <svg class="icon setThemeLight"><use xlink:href="#sun"></use></svg>
+          <span class="theme__divider"></span>
+          <svg class="icon setThemeDark"><use xlink:href="#moon"></use></svg>
+        </div>
+      </header>
+      <main class="main">
+        <!-- left side TODO LIST / FILTER TODOS etc-->
+        <div class="aside-left">
+          <div class="todos__header">
+            <h2 class="todos__title">Todos</h2>
+            <svg class="icon"><use xlink:href="#arrowDown"></use></svg>
+          </div>
+
+          <!-- todo options -->
+          <div class="todo__options">
+            <!-- filter or  sort todos -->
+            <div class="selectBox__options">
+              <!-- Filter -->
+              <select name="FILTER" id="selectBox1" class="button">
+                  <option value="" disabled selected>Filter</option>
+                  <option value="all">All</option>
+                  <option value="completed">Completed</option>
+                  <option value="pending">Pending</option>
+                  <optgroup label="Difficulty">
+                    <option value="difficulty-1">Difficulty 1</option>
+                    <option value="difficulty-2">Difficulty 2</option>
+                    <option value="difficulty-3">Difficulty 3</option>
+                    <option value="difficulty-4">Difficulty 4</option>
+                    <option value="difficulty-5">Difficulty 5</option>
+                  </optgroup>
+                </select>
+
+                <!-- Sort -->
+                <select name="Sort" id="selectBox2" class="button">
+                  <option value="" disabled selected>Sort By</option>
+                  <option value="date">Date Modified</option>
+                  <option value="difficultyAsc">Difficulty (Asc)</option>
+                  <option value="difficultyDesc">Difficulty (Desc)</option>
+                  <option value="Completed">Completed First</option>
+                  <option value="NotCompleted">Pending First</option>
+                </select>
+
+            </div>
+
+            <!-- change color theme -->
+            <div class="color__option">
+              <span class="color__change box1 color__option__hover" data-color="#5F374B"></span>
+              <span class="color__change box2 color__option__hover" data-color="#31836b"></span>
+              <span class="color__change box3 color__option__hover" data-color="#d45754"></span>
+              <span class="color__change box4 color__option__hover" data-color="#d39c06"></span>
+              <svg class="icon trashCan__option color__option__reset"><use xlink:href="#trash"></svg>
+            </div>
+          </div>
+          <!-- todo list rendering -->
+          <div class="todo__list bordered" >
+            <div class="todo__empty">
+              <p>Nothing to do... for now </p>
+            <svg class="icon"><use xlink:href="#smile"></use></svg>
+            </div>
+            <h4 class="button addTodo__button">Add one :) </h4>
+          </div>
+          <!-- backup and export  -->
+          <div class="buttons__leftSide">
+            <span class="button bordered export__button">Export Pdf</span>
+          </div>
+        </div>
+
+        <!-- right side -->
+        <div class="aside-right">
+          <h2 class="add__title">Add New Task</h2>
+          <form action="" class="form__addTodo">
+            <div class="add__field bordered">
+              <svg class="icon"><use xlink:href="#add"></use></svg>
+              <input
+                type="text"
+                placeholder="Task name"
+                class="add__input "
+                name="todoName"
+              />
+            </div>
+            <span class="error  todoName__Error"></span>
+            <div class="category__option">
+              <label for="category" class="category__title">Category</label>
+              <select name="category" id="category" class="button category__selectBox" value="">
+                <option value="" selected>Select a Category</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="shopping">Shopping</option>
+                <option value="fitness">Fitness</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <span class="error todoCategory_Error"></span>
+            <div class="add__difficulty">
+              <span class="difficulty__title">Difficulty</span>
+              <div class="stars">
+                <svg class="star" data-value="1"><use xlink:href="#star"></use></svg>
+                <svg class="star" data-value="2"><use xlink:href="#star"></use></svg>
+                <svg class="star" data-value="3"><use xlink:href="#star"></use></svg>
+                <svg class="star" data-value="4"><use xlink:href="#star"></use></svg>
+                <svg class="star" data-value="5"><use xlink:href="#star"></use></svg>
+                <input type="text" class="getDifficultyValue" name="difficulty__value">
+              </div>
+            </div>
+            <span class="error error__margin todoDifficulty_Error"></span>
+
+            <textarea
+              class="add__textarea bordered"
+              placeholder="Description..."
+              name="todoDescription"
+            ></textarea>
+            <span class="error todoDescription_Error"></span>
+
+            <div class="add__buttons">
+              <button class="button bordered" type="submit">Add</button>
+              <button class="button bordered" type="reset">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/redux@4.2.1/dist/redux.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer.js@4.5.4/dist/easytimer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script src="./js/app.js" defer type="module"></script>
+  </body>
+</html>
